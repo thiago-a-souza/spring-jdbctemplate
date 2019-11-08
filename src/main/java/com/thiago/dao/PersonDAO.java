@@ -11,16 +11,15 @@ import com.thiago.model.Person;
 
 @Service
 public class PersonDAO {
-	private final String SQL_FIND_ALL = "select * from person_data";
-	private final String SQL_FIND_BY_ID = "select * from person_data where id = ?";
-	private final String SQL_DELETE_BY_ID = "delete from person_data where id = ?";
-	private final String SQL_UPDATE_BY_ID = "update person_data set first_name = ?, last_name = ? where id = ?";
-	private final String SQL_INSERT = "insert into person_data (id, first_name, last_name) values (?, ?, ?)";
-	private final String SQL_COUNT = "select count(*) from person_data where id = ?";
+	private final String SQL_FIND_ALL = "select * from person";
+	private final String SQL_FIND_BY_ID = "select * from person where id = ?";
+	private final String SQL_DELETE_BY_ID = "delete from person where id = ?";
+	private final String SQL_UPDATE_BY_ID = "update person set first_name = ?, last_name = ? where id = ?";
+	private final String SQL_INSERT = "insert into person (id, first_name, last_name) values (?, ?, ?)";
+	private final String SQL_COUNT = "select count(*) from person where id = ?";
 	
 	@Autowired
-	private JdbcTemplate jdbcTemplate;
-	
+    private JdbcTemplate jdbcTemplate;
 	
 	public List<Person> findAll(){
 		return jdbcTemplate.query(SQL_FIND_ALL, new BeanPropertyRowMapper<Person>(Person.class));
