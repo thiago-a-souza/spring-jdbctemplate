@@ -19,7 +19,7 @@ public class PersonDAO {
 	private final String SQL_COUNT = "select count(*) from person where id = ?";
 	
 	@Autowired
-    private JdbcTemplate jdbcTemplate;
+    	private JdbcTemplate jdbcTemplate;
 	
 	public List<Person> findAll(){
 		return jdbcTemplate.query(SQL_FIND_ALL, new BeanPropertyRowMapper<Person>(Person.class));
