@@ -19,7 +19,7 @@ public class PersonDAO {
 	private final String SQL_COUNT = "select count(*) from person_data where id = ?";
 	
 	@Autowired
-    private JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 	
 	
 	public List<Person> findAll(){
